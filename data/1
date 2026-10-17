@@ -1,0 +1,18 @@
+Column
+Meaning
+Why it matters
+precipitation_sum
+Rain that day (mm)
+The main sowing trigger
+temperature_2m_max / min
+Daily highest and lowest air temperature (°C)
+Heat stress and germination
+et0_fao_evapotranspiration
+How much water the air could pull from a crop (mm/day)
+High ET0 dries the soil fast
+soil_moisture_0_to_7cm
+Water in the top soil (fraction)
+Seed germination needs moist topsoil
+relative_humidity_2m
+Air moisture (%)
+Dry air means faster drying and fewer rain chances
