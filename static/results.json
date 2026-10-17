@@ -30,5 +30,33 @@
   "Baseline weekly (always majority)": {
     "mean": 0.674,
     "std": 0.0
+  },
+  "Rule-only baseline accuracy": {
+    "mean": 0.875,
+    "std": 0.0
+  },
+  "Rule-only baseline F1": {
+    "mean": 0.839,
+    "std": 0.0
+  },
+  "Exp3 all features F1": {
+    "mean": 0.801,
+    "std": 0.0
+  },
+  "Exp3 without climate indices F1": {
+    "mean": 0.758,
+    "std": 0.0
+  },
+  "Exp3 selected features F1": {
+    "mean": 0.819,
+    "std": 0.0
+  },
+  "False-start test: rule accuracy": {
+    "mean": 0.722,
+    "std": 0.0
+  },
+  "False-start test: model accuracy": {
+    "mean": 0.643,
+    "std": 0.0
   }
 }

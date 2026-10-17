@@ -105,3 +105,5 @@ This course demo replays historical cases to compare predictions with what actua
 - Labels come from our own rule, not official year-by-year sowing dates. The rule rewards rain and has no waterlogging ceiling.
 - 2025: the rule marks 25 May as safe after unusually heavy early rain, while the Maharashtra Agriculture Department advised farmers to wait.
 - Validation reference: MPKV Rahuri (Gramin Krishi Mausam Sewa) agromet bulletins for Ahilyanagar.
+
+A rule-only baseline (rain since 1 May at least 75 mm) scores as well as the Random Forest, so we also evaluate false-start detection separately.
