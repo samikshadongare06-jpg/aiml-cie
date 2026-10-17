@@ -16,7 +16,7 @@ def parse(text):
                 if float(v) > -90:              # -99.99 or -9999 means missing
                     rows.append((int(p[0]), month, float(v)))
     df = pd.DataFrame(rows, columns=['year', 'month', 'value'])
-    return df[(df.year >= 1995) & (df.year <= 2025)]
+    return df[(df.year >= 1994) & (df.year <= 2025)]
 
 for name, url in URLS.items():
     try:
