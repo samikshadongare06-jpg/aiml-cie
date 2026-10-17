@@ -69,6 +69,8 @@ Year class = first safe decision date:
 - 22 or 29 Jun: June_W4
 - 6 Jul or later, or never: July_or_later
 
+year_class_3 merges June_W1, June_W2 and June_W3 into By_mid_June, and June_W4 into Late_June, because the early classes have only 1 to 6 years.
+
 ## Final CSV: data/processed/final_dataset.csv
 year, decision_date, doy, rain_7d, rain_14d, rain_cum_may1, rain_days_14d, days_since_rain, tmax_7d, tmin_7d, soil_7d, rh_7d, et0_7d, oni, oni_change, dmi, soi, safe_label, year_class
 
@@ -97,3 +99,9 @@ This course demo replays historical cases to compare predictions with what actua
 - Use paths relative to the project root
 - Never use data from after the decision date as a feature
 - If something in this file seems wrong or unclear, say so instead of guessing
+
+## Known limitations (say these in the viva before being asked)
+- Rainfall is ERA5 reanalysis at one point (19.09 N, 74.74 E), not gauge data, and can differ from local reports.
+- Labels come from our own rule, not official year-by-year sowing dates. The rule rewards rain and has no waterlogging ceiling.
+- 2025: the rule marks 25 May as safe after unusually heavy early rain, while the Maharashtra Agriculture Department advised farmers to wait.
+- Validation reference: MPKV Rahuri (Gramin Krishi Mausam Sewa) agromet bulletins for Ahilyanagar.
