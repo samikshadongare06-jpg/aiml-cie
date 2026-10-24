@@ -58,5 +58,49 @@
   "False-start test: model accuracy": {
     "mean": 0.643,
     "std": 0.0
+  },
+  "Exp4 Rule only (>= 75 mm) accuracy": {
+    "mean": 0.875,
+    "std": 0.0
+  },
+  "Exp4 Rule only (>= 75 mm) F1": {
+    "mean": 0.839,
+    "std": 0.0
+  },
+  "Exp4 Majority guess accuracy": {
+    "mean": 0.677,
+    "std": 0.0
+  },
+  "Exp4 Majority guess F1": {
+    "mean": 0.0,
+    "std": 0.0
+  },
+  "Exp4 Decision Tree accuracy": {
+    "mean": 0.846,
+    "std": 0.0
+  },
+  "Exp4 Decision Tree F1": {
+    "mean": 0.775,
+    "std": 0.0
+  },
+  "Exp4 Logistic Regression accuracy": {
+    "mean": 0.824,
+    "std": 0.0
+  },
+  "Exp4 Logistic Regression F1": {
+    "mean": 0.746,
+    "std": 0.0
+  },
+  "Exp4 Random Forest accuracy": {
+    "mean": 0.875,
+    "std": 0.0
+  },
+  "Exp4 Random Forest F1": {
+    "mean": 0.829,
+    "std": 0.0
+  },
+  "Exp4 tuned Random Forest F1": {
+    "mean": 0.829,
+    "std": 0.0
   }
 }
