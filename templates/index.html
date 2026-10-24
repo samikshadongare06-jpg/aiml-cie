@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soybean sowing check, Ahilyanagar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header>
+  <h1>Is it safe to sow soybean today?</h1>
+  <p>Ahilyanagar, Maharashtra. Checks rain and climate signals against records from 1995 to 2025.</p>
+  <nav>
+    <button data-tab="predict" class="on">Check a date</button>
+    <button data-tab="process">How we built it</button>
+  </nav>
+</header>
+<main>
+<section id="predict">
+  <div class="panel">
+    <div class="example">
+      <span>Replay a past case</span>
+      <select id="ex-year" aria-label="Year">{% for y in years %}<option>{{ y }}</option>{% endfor %}</select>
+      <select id="ex-date" aria-label="Date">{% for d in dates %}<option value="{{ d.v }}">{{ d.label }}</option>{% endfor %}</select>
+      <button id="ex-load" type="button">Load case</button>
+    </div>
+    <form id="form">
+      {% for f in features %}
+      <label>{{ f.label }} <small>{{ f.unit }}</small>
+        <input name="{{ f.key }}" type="number" step="any" placeholder="typical {{ f.median }}" required>
+        <em>{{ f.hint }}</em>
+      </label>
+      {% endfor %}
+      <button class="go" type="submit">Check this date</button>
+    </form>
+  </div>
+  <aside id="result" class="panel" aria-live="polite">
+    <p class="empty">Load a past case or type today's readings, then press Check this date.</p>
+  </aside>
+</section>
+<section id="process" hidden>
+  <ol class="steps">
+    <li><h2>The question</h2><p>Farmers who sow after the first big rain can be caught by a dry break and have to sow again. We ask: given the weather so far, is this date safe for soybean?</p></li>
+    <li><h2>The data</h2><p>Daily weather for one point near Ahilyanagar (ERA5 reanalysis from Open-Meteo) and monthly ocean indices from NOAA: ONI, SOI and the Indian Ocean Dipole. Years 1995 to 2025, nine decision dates a year from 18 May to 13 July, 279 rows in all.</p></li>
+    <li><h2>The label</h2><p>A date counts as safe when at least 75 mm of rain has fallen since 1 May, at least 40 mm falls in the next 21 days, and no dry spell of 10 days follows. These are our own rules, based on common soybean advice.</p></li>
+    <li><h2>The features</h2><p>Rain since 1 May, rain in the last 7 days, rainy days in the last 14, days since the last rain, topsoil moisture, evaporation demand, night temperature, ONI, ONI change and SOI. Only data from before the decision date is used.</p></li>
+    <li><h2>The experiments</h2><div id="ladder"></div><div id="gallery"></div></li>
+    <li><h2>What we found</h2><p>A one-line rain rule scores about as well as our Random Forest. The model cannot yet tell a false start from a real one, because that depends on rain still to come.</p></li>
+    <li><h2>Limits and next steps</h2><p>Rainfall is reanalysis at one point, not gauge data. Labels come from our rule, not official sowing dates. In 2025 the rule called late May safe, although farmers were advised to wait. Next: weather forecasts, gauge data from MPKV Rahuri, and more locations.</p></li>
+  </ol>
+</section>
+</main>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
