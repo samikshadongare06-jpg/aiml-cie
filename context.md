@@ -107,12 +107,3 @@ This course demo replays historical cases to compare predictions with what actua
 - Validation reference: MPKV Rahuri (Gramin Krishi Mausam Sewa) agromet bulletins for Ahilyanagar.
 
 A rule-only baseline (rain since 1 May at least 75 mm) scores as well as the Random Forest, so we also evaluate false-start detection separately.
-
-## Final model (done)
-- Features (10): rain_cum_may1, rain_7d, rain_days_14d, days_since_rain, soil_7d, et0_7d, tmin_7d, oni, oni_change, soi
-- Model: RandomForestClassifier(class_weight='balanced', max_depth=5, min_samples_leaf=5, n_estimators=200)
-  saved in models/best_model.joblib; feature order in models/features.json
-- Cutoff for "safe": 0.5 (grouped-by-year test: 89 of 91 safe dates found, 73% of "safe" calls correct)
-- All scores are in static/results.json. The one-line rule (rain since 1 May >= 75 mm) scores about as well as the model.
-- False-start test: the model catches 2 of 35 false starts, so it cannot foresee dry breaks. Do NOT present the probability as a confidence.
-- Website: two-level verdict at 0.5, rule progress bar, and the 73% caveat

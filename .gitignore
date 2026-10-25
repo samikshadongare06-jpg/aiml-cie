@@ -1,3 +1,26 @@
+# Python
 venv/
+.venv/
+env/
 __pycache__/
+*.py[cod]
+.pytest_cache/
 .ipynb_checkpoints/
+.mypy_cache/
+*.egg-info/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs, temporary and backup files
+*.log
+*.tmp
+*.bak
+tmp/
+.env
+
+# NOTE: data/, models/ and reports/ are deliberately tracked: the cached raw data lets the project run offline,
+# and models/ + reports/ are the verified outputs of `python src/6_train_model.py`.
