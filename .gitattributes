@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Never touch binary files (CRLF conversion would corrupt the model on Windows)
+*.joblib binary
+*.png binary
